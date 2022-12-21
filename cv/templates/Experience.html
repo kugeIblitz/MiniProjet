@@ -1,0 +1,20 @@
+{% load static %}
+<section class="skills section" id="Experience">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="skills__container bd-grid">
+        <div class="skills__box">
+        
+            {% for e in experience %}
+            <h3 class="skills__subtitle">{{e.exp_name}}</h3> 
+                    <span class="skills__name">{{e.description}}</span>
+                {% endfor %}
+            
+            
+        </div>
+    
+        <div class="skills__img">
+            <img src="{% static 'assets/img/exp.jpg' %}" width="400" height="500" />
+        </div>
+    </div>
+</section>

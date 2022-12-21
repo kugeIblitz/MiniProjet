@@ -1,0 +1,39 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+<section class="skills section" id="skillsConf">
+    <h2 class="section-title">Skills</h2>
+    <div class="container">
+        <div class="card mb-6">
+        <div class="card-body">
+    
+        <h1>List of Skills</h1>
+        <table class="table" border="1">
+        <thead class="table-dark">
+        <tr>
+        <td>Skill category</td>
+        <td>Skill name</td>
+        <td>Modify</td>
+        <td>Add</td>
+        <td>Delete</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for s in skills  %}
+        <tr>
+        <td>{{ s.category }}</td>
+        <td>{{ s.skill_name }}</td>
+        <td><a href="{% url 'update-skill' s.id %}"><img height="32" width="32" src="{% static 'assets/img/modifier.png' %}"></a></td>
+        <td><a href="{% url 'Add-skill' %}"><img height="70" width="52" src="{% static 'assets/img/add.png' %}"></a></td>
+        <td><a href="{% url 'delete-skill' s.id %}"><img height="32" width="32" src="{% static 'assets/img/delete.jfif' %}"></a></td>
+        </tr>
+       {% endfor %}
+        </tbody>
+        </table>
+        </div>
+            </div>
+                </div>
+        
+            </section>
+
+
+       

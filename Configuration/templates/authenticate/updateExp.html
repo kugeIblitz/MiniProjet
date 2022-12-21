@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+<head>
+<title>Update</title>
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css'%}">
+</head>
+<body style="background-color:#FAEBD7">
+<h1 class="text-success"><center>UPDATE EXPERIENCE</center></h1><br><br>
+
+<center>
+<form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+
+<div class="col-sm-4 col-md-6 col-lg-4">
+<br><input type="submit" value="Update" class="btn btn-success">
+</div>
+</form>
+</center>
+</body>
+</html>

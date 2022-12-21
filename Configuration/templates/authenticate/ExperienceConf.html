@@ -1,0 +1,37 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+<section class="skills section" id="ExperienceConf">
+    <h2 class="section-title">Experience</h2>
+    <div class="container">
+        <div class="card mb-6">
+        <div class="card-body">
+    
+        <h1>List of Experiences</h1>
+        <table class="table" border="1">
+        <thead class="table-dark">
+        <tr>
+        <td>Experience</td>
+        <td>Modify</td>
+        <td>Add</td>
+        <td>Delete</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for e in experience  %}
+        <tr>
+        <td>{{ e.exp_name  }}</td>
+        <td><a href="{% url 'update-exp' e.id %}"><img height="32" width="32" src="{% static 'assets/img/modifier.png' %}"></a></td>
+        <td><a href="{% url 'Add-exp'%}"><img height="70" width="52" src="{% static 'assets/img/add.png' %}"></a></td>
+        <td><a href="{% url 'delete-exp' e.id %}"><img height="32" width="32" src="{% static 'assets/img/delete.jfif' %}"></a></td>
+        </tr>
+       {% endfor %}
+        </tbody>
+        </table>
+        </div>
+            </div>
+                </div>
+                </section>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>

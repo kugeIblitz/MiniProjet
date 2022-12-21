@@ -1,0 +1,51 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+<section class="portfolio section" id="DandCConf">
+    <h2 class="section-title">Diplomas and certificates</h2>
+
+    <div class="container">
+        <div class="card mb-6">
+        <div class="card-body">
+     
+        <style>
+            img.certif {
+                
+        height: 300px;
+        width: 350px;
+        max-width: none;
+        padding: 0px 10px 10px 0;
+        margin: 0px 10px 10px 2px;
+        
+            }
+            </style>
+
+        <h1>List of certificates</h1>
+        <table class="table" border="1">
+        <thead class="table-dark">
+        <tr>
+        <td>ID</td>
+        <td>Certificate</td>
+        <td>Modify</td>
+        <td>Add</td>
+        <td>Delete</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for c in portfolio  %}
+        <tr>
+        <td>{{ c.number }}</td>
+        <td><img class="certif" src="{{c.image.url}}"></td>
+        <td><a href="{% url 'update-certif' c.id %}"><img height="32" width="32" src="{% static 'assets/img/modifier.png' %}"></a></td>
+        <td><a href="{% url 'Add-certif' %}"><img height="70" width="52" src="{% static 'assets/img/add.png' %}"></a></td>
+        <td><a href="{% url 'delete-certif' c.id %}"><img height="32" width="32" src="{% static 'assets/img/delete.jfif' %}"></a></td>
+        </tr>
+       {% endfor %}
+        </tbody>
+        </table>
+        </div>
+            </div>
+                </div>
+        
+            </section>
+

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Portfolio responsive complete</title>
+    </head>
+    <body>
+        <!--===== NavBar =====-->
+        {% include "NavBar.html" %}
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home" id="home">
+                <div class="home__container bd-grid">
+                    <h1 class="home__title"><span>{{ home.greetings_1 }}</span><br>{{ home.greetings_2 }}</h1>
+
+                   
+
+                    <img src="{{ home.picture.url }}" class="home__img" style="margin-right: -200px;">
+                </div>
+            </section>
+            
+            <!--===== ABOUT =====-->
+            {% include "about.html" %}
+
+            <!--===== SKILLS =====-->
+            {% include "skills.html" %} 
+
+            <!--===== Diplomas and certificates =====-->
+            
+            {% include "DandC.html" %}
+
+            <!--===== Experience =====-->
+            {% include "Experience.html" %}
+
+            <!--===== CONTACT =====-->
+            {% include "contact.html" %}
+
+        <!--===== FOOTER =====-->
+        {% include "footer.html" %}
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="{% static 'assets/js/main.js' %}"></script>
+    </body>
+</html>
